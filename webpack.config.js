@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+// const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const path = require('path');
 const isPro = process.env.NODE_ENV.trim() === 'production';
 const ExtractText = new ExtractTextPlugin({
@@ -88,14 +88,10 @@ module.exports = {
     ExtractText,
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new UglifyJSPlugin({
-      uglifyOptions: {
-        output: {
-          comments: false,
-          beautify: false,
-        },
-      },
-    }),
+    /* new UglifyJSPlugin({
+      test: /\.js/,
+      include: /\/node_modules/,
+    }), */
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': JSON.stringify(process.env.NODE_ENV),
