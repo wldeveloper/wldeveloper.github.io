@@ -13,7 +13,7 @@ module.exports = {
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname),
-    publicPath: isPro ? 'http://wldevelop/' : '/',
+    publicPath: isPro ? 'http://wldevelop.com/' : '/',
     filename: 'js/bashihui.js',
   },
   devServer: {
