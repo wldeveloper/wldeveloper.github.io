@@ -81,21 +81,23 @@ module.exports = {
     ]
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: './src/index.html',
-      filename: 'index.html',
-    }),
-    ExtractText,
-    new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
-    /* new UglifyJSPlugin({
-      test: /\.js/,
-      include: /\/node_modules/,
-    }), */
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': JSON.stringify(process.env.NODE_ENV),
       }
     }),
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+      filename: 'index.html',
+    }),
+    ExtractText,
+    // new UglifyJSPlugin({
+    //   uglifyOptions: {
+    //     output: {
+    //       comments: false,
+    //       beautify: false,
+    //     },
+    //   }
+    // }),
   ],
 };
