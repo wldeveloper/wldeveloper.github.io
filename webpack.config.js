@@ -12,7 +12,7 @@ const ExtractText = new ExtractTextPlugin({
 module.exports = {
   entry: './src/main.js',
   output: {
-    path: path.resolve(__dirname, 'public'),
+    path: path.resolve(__dirname, 'docs'),
     publicPath: isPro ? 'http://wldevelop/' : '/',
     filename: 'js/bashihui.js',
   },
