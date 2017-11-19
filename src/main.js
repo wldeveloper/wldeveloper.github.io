@@ -7,29 +7,37 @@ require('./css/cursor.css');
 require('./css/full.css');
 require('./css/stars.scss');
 const love = require('./js/go.js');
+/* if (wx) {
+  wx.config({
+    // 配置信息, 即使不正确也能使用 wx.ready
+    debug: false,
+    appId: '',
+    timestamp: 1,
+    nonceStr: '',
+    signature: '',
+    jsApiList: []
+  });
+  wx.ready(function () {
+    const music = document.querySelector('.music');
+    if (music.paused) {
+      music.play();
+    }
+  });
+}; */
 window.onload = () => {
   // loading
   const loader = document.querySelector('.loader');
-  const music = document.querySelector('.music');
+  // const music = document.querySelector('.music');
   // music.src = 'http://wldevelop.com/audio/fly.mp3';
-  music.addEventListener('canplay', () => {
+  // music.load();
+  // music.addEventListener('canplay', () => {
     loader.style.display = 'none';
-    if (wx) {
-      wx.config({
-        // 配置信息, 即使不正确也能使用 wx.ready
-        debug: false,
-        appId: '',
-        timestamp: 1,
-        nonceStr: '',
-        signature: '',
-        jsApiList: []
-      });
-      wx.ready(function () {
-        music.play();
-      });
-    } else {
-      music.play();
-    };
+    // music.play();
+    // document.addEventListener("WeixinJSBridgeReady", function () {
+    //   if (music.paused) {
+    //     music.play();
+    //   };
+    // }, false);
     const swiperH = new Swiper('.swiper-container-h', {
       autoplay: true,
       allowTouchMove: false,
@@ -67,5 +75,5 @@ window.onload = () => {
         swiperH.autoplay.start();
       };
     })
-  })
+  // })
 }
