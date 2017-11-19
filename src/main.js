@@ -11,7 +11,8 @@ window.onload = () => {
   // loading
   const loader = document.querySelector('.loader');
   const music = document.querySelector('.music');
-  music.onload = () => {
+  // music.src = 'http://wldevelop.com/audio/fly.mp3';
+  music.oncanplay = () => {
     loader.style.display = 'none';
     if (wx) {
       wx.config({
@@ -24,11 +25,9 @@ window.onload = () => {
         jsApiList: []
       });
       wx.ready(function () {
-        music.src = 'http://wldevelop.com/audio/fly.mp3';
         music.play();
       });
     } else {
-      music.src = 'http://wldevelop.com/audio/fly.mp3';
       music.play();
     };
     const swiperH = new Swiper('.swiper-container-h', {

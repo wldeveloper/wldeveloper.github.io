@@ -146,7 +146,8 @@ window.onload = function () {
   // loading
   var loader = document.querySelector('.loader');
   var music = document.querySelector('.music');
-  music.onload = function () {
+  // music.src = 'http://wldevelop.com/audio/fly.mp3';
+  music.oncanplay = function () {
     loader.style.display = 'none';
     if (wx) {
       wx.config({
@@ -159,11 +160,9 @@ window.onload = function () {
         jsApiList: []
       });
       wx.ready(function () {
-        music.src = 'http://wldevelop.com/audio/fly.mp3';
         music.play();
       });
     } else {
-      music.src = 'http://wldevelop.com/audio/fly.mp3';
       music.play();
     };
     var swiperH = new _swiper2.default('.swiper-container-h', {
