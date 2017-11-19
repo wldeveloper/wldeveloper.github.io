@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+// const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const path = require('path');
 const isPro = process.env.NODE_ENV.trim() === 'production';
 const ExtractText = new ExtractTextPlugin({
@@ -35,8 +35,8 @@ module.exports = {
             ]
           }
         },
-        exclude: /node_modules\/(?!(dom7|swiper)\/).*/,
-        // exclude: /node_modules/,
+        // exclude: /node_modules\/(?!(dom7|swiper)\/).*/,
+        exclude: /node_modules/,
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
@@ -91,13 +91,13 @@ module.exports = {
       filename: 'index.html',
     }),
     ExtractText,
-    new UglifyJSPlugin({
-      uglifyOptions: {
-        output: {
-          comments: false,
-          beautify: false,
-        },
-      }
-    }),
+    // new UglifyJSPlugin({
+    //   uglifyOptions: {
+    //     output: {
+    //       comments: false,
+    //       beautify: false,
+    //     },
+    //   }
+    // }),
   ],
 };

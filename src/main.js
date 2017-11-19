@@ -12,7 +12,7 @@ window.onload = () => {
   const loader = document.querySelector('.loader');
   const music = document.querySelector('.music');
   // music.src = 'http://wldevelop.com/audio/fly.mp3';
-  music.oncanplay = () => {
+  music.addEventListener('canplay', () => {
     loader.style.display = 'none';
     if (wx) {
       wx.config({
@@ -67,5 +67,5 @@ window.onload = () => {
         swiperH.autoplay.start();
       };
     })
-  };
+  })
 }
