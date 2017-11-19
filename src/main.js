@@ -1,4 +1,5 @@
 import Swiper from 'swiper';
+require('./css/loaders.css');
 require('./css/swiper.css');
 require('./css/bubble.css');
 require('./css/code.css');
@@ -7,6 +8,26 @@ require('./css/full.css');
 require('./css/stars.scss');
 const love = require('./js/go.js');
 window.onload = () => {
+  // loading
+  const loader = document.querySelector('.loader');
+  const music = document.querySelector('.music');
+  loader.style.display = 'none';
+  // music.src = 'http://wldevelop.com/audio/fly.mp3';
+  if (wx) {
+    wx.config({
+      // 配置信息, 即使不正确也能使用 wx.ready
+      debug: false,
+      appId: '',
+      timestamp: 1,
+      nonceStr: '',
+      signature: '',
+      jsApiList: []
+    });
+    wx.ready(function () {
+      music.play();
+    });
+  };
+  music.play();
   const swiperH = new Swiper('.swiper-container-h', {
     autoplay: true,
     allowTouchMove: false,
