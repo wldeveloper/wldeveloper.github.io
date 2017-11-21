@@ -214,6 +214,7 @@ span {
   position: absolute;
   left: 0;
   top: 127px;
+  z-index:2;
   width: 490px;
   height: 372.4px;
   overflow: hidden;
